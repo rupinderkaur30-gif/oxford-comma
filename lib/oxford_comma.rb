@@ -1,6 +1,16 @@
-def oxford_comma(array)
+ require "pry"
+ def oxford_comma(array)
     if array.length == 1
-     array[0]
+        array.join
+
     elsif array.length == 2 
-    array.join("and")
+    array.join(" and ")
+
+    elsif array.length > 2
+        last_element = "and " + array[-1]
+        array[-1] = last_element
+      array.join(", ")
+    end
 end
+
+
